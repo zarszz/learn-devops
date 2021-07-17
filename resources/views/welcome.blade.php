@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel - UPDATE V3
+                    Laravel - UPDATE V4
                 </div>
 
                 <div class="links">
