@@ -36,15 +36,15 @@ task('deploy:secrets', function () {
 });
 
 // Staging Server
-host('staging.ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
-->hostname('44.195.79.95') // Hostname or IP address
+host('staging.ec2-100-26-242-157.compute-1.amazonaws.com') // Name of the server
+->hostname('100.26.242.157') // Hostname or IP address
 ->stage('staging') // Deployment stage (production, staging, etc)
 ->user('ubuntu') // SSH user
 ->set('deploy_path', '/var/www/html/learn-devops'); // Deploy path
 
 // Production Server
-host('ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
-->hostname('44.195.79.95') // Hostname or IP address
+host('ec2-100-26-242-157.compute-1.amazonaws.com') // Name of the server
+->hostname('100.26.242.157') // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('ubuntu') // SSH user
 ->set('deploy_path', '/var/www/html/learn-devops'); // Deploy path
