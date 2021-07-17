@@ -32,7 +32,7 @@ add('rsync', [
 // Since our secrets are stored in Gitlab, we can access them as env vars.
 task('deploy:secrets', function () {
     file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
-    upload('.env', get('deploy_path') . '/shared');
+    upload('.env', get('deploy_path'));
 });
 
 // Production Server
