@@ -35,6 +35,13 @@ task('deploy:secrets', function () {
     upload('.env', get('deploy_path'));
 });
 
+// Staging Server
+host('staging.ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
+->hostname('44.195.79.95') // Hostname or IP address
+->stage('staging') // Deployment stage (production, staging, etc)
+->user('ubuntu') // SSH user
+->set('deploy_path', '/var/www/html/learn-devops'); // Deploy path
+
 // Production Server
 host('ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
 ->hostname('44.195.79.95') // Hostname or IP address
@@ -42,12 +49,6 @@ host('ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
 ->user('ubuntu') // SSH user
 ->set('deploy_path', '/var/www/html/learn-devops'); // Deploy path
 
-// Staging Server
-host('ec2-44-195-79-95.compute-1.amazonaws.com') // Name of the server
-->hostname('44.195.79.95') // Hostname or IP address
-->stage('staging') // Deployment stage (production, staging, etc)
-->user('ubuntu') // SSH user
-->set('deploy_path', '/var/www/html/learn-devops'); // Deploy path
 
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
 
